@@ -5,8 +5,8 @@ import streamlit as st
 import pandas as pd
 from io import BytesIO
 
-# 1. ตั้งค่าหน้าตาของโปรแกรมเบื้องต้น
-st.set_page_config(page_title="Expense Tracker TH", page_icon="💰", layout="centered")
+# 1. ตั้งค่าหน้าตาของโปรแกรมเบื้องต้น (เปลี่ยนชื่อแท็บเป็น Th-BahtTracker)
+st.set_page_config(page_title="Th-BahtTracker", page_icon="💰", layout="centered")
 
 # 2. ใส่ Custom CSS เพื่อเปลี่ยนฟอนต์ทั้งแอปเป็น "Prompt"
 st.markdown(
@@ -30,8 +30,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# หัวข้อหลัก
-st.title("Expense Tracker TH")
+# หัวข้อหลัก (เปลี่ยนเป็น Th-BahtTracker)
+st.title("Th-BahtTracker 🇹🇭")
 
 YEAR = 2026
 
@@ -158,7 +158,7 @@ if st.button("คำนวณเงิน", type="primary"):
             df = pd.DataFrame(all_rows)
             st.dataframe(df, use_container_width=True)
 
-            # ส่วนการสร้างไฟล์ Excel สำหรับดาวน์โหลด
+            # ส่วนการสร้างไฟล์ Excel สำหรับดาวน์โหลด (เปลี่ยนชื่อไฟล์ดาวน์โหลดเป็น th_bahttracker_report)
             output = BytesIO()
             with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
                 df.to_excel(writer, index=False, sheet_name="Expenses")
@@ -178,6 +178,6 @@ if st.button("คำนวณเงิน", type="primary"):
             st.download_button(
                 label="📥 ดาวน์โหลดไฟล์ Excel (.xlsx)",
                 data=output,
-                file_name=f"expenses_report_{YEAR}.xlsx",
+                file_name=f"th_bahttracker_report_{YEAR}.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             )
