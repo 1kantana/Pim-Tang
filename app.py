@@ -30,7 +30,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("Pim-Tang 🇹🇭")
+# แทนที่ st.title("Pim-Tang 🇹🇭") ด้วยโค้ดชุดนี้:
+st.markdown(
+    """
+    <h1 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+        Pim-Tang 
+        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ed.svg" style="width: 45px; height: auto; vertical-align: middle;">
+    </h1>
+    """, 
+    unsafe_allow_html=True
+)
 
 YEAR = 2026
 
