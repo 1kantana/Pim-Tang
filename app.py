@@ -30,19 +30,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# สไตล์ที่ 3: สติกเกอร์ขอบมน (Rounded Badge)
-ROUNDED_BADGE = """
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" width="46" style="vertical-align: middle; margin-left: 10px; rx: 2px; border: 3px solid #FFF; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.16); background: #A51931;">
-    <rect fill="#A51931" width="9" height="6"/>
-    <rect fill="#F4F5F8" width="9" height="4" y="1"/>
-    <rect fill="#2D2A4A" width="9" height="2" y="2"/>
-</svg>
+# สไตล์ที่ 1: ไอคอนเครื่องคิดเลข (Minimal Calculator)
+CALCULATOR_ICON = """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" style="vertical-align: middle; margin-left: 10px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));">
+    <rect x="4" y="2" width="16" height="20" rx="3" fill="#2D2A4A"/>
+    <rect x="6" y="4" width="12" height="4" rx="1" fill="#00D2C4"/>
+    <line x1="8" y1="6" x2="14" y2="6" stroke="#2D2A4A" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="8" cy="11" r="1.2" fill="#F4F5F8"/>
+    <circle cx="12" cy="11" r="1.2" fill="#F4F5F8"/>
+    <circle cx="16" cy="11" r="1.2" fill="#FF6B6B"/> <circle cx="8" cy="15" r="1.2" fill="#F4F5F8"/>
+    <circle cx="12" cy="15" r="1.2" fill="#F4F5F8"/>
+    <circle cx="16" cy="15" r="1.2" fill="#FFD166"/> <circle cx="8" cy="19" r="1.2" fill="#F4F5F8"/>
+    <rect x="10.8" y="17.8" width="6.4" height="2.4" rx="1.2" fill="#4B65F6"/> </svg>
 """
 
 st.markdown(
     f"""
     <h1 style="display: flex; align-items: center; white-space: nowrap;">
-        Pim-Tang {ROUNDED_BADGE}
+        Pim-Tang {CALCULATOR_ICON}
     </h1>
     """, 
     unsafe_allow_html=True
