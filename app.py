@@ -30,26 +30,26 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# นิยามไอคอนเครื่องคิดเลข (เอาสไตล์ที่เป็นปีกกาออกเพื่อความปลอดภัย)
-CALCULATOR_ICON = """
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" style="vertical-align: middle; margin-left: 10px;">
-    <rect x="4" y="2" width="16" height="20" rx="3" fill="#2D2A4A"/>
-    <rect x="6" y="4" width="12" height="4" rx="1" fill="#00D2C4"/>
-    <line x1="8" y1="6" x2="14" y2="6" stroke="#2D2A4A" stroke-width="1.5" stroke-linecap="round"/>
-    <circle cx="8" cy="11" r="1.2" fill="#F4F5F8"/>
-    <circle cx="12" cy="11" r="1.2" fill="#F4F5F8"/>
-    <circle cx="16" cy="11" r="1.2" fill="#FF6B6B"/>
-    <circle cx="8" cy="15" r="1.2" fill="#F4F5F8"/>
-    <circle cx="12" cy="15" r="1.2" fill="#F4F5F8"/>
-    <circle cx="16" cy="15" r="1.2" fill="#FFD166"/>
-    <circle cx="8" cy="19" r="1.2" fill="#F4F5F8"/>
-    <rect x="10.8" y="17.8" width="6.4" height="2.4" rx="1.2" fill="#4B65F6"/>
+CALCULATOR_STYLE_1 = """
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="42" style="vertical-align: middle; margin-left: 10px;">
+    <!-- ตัวเครื่องขอบมนสุดๆ -->
+    <rect x="3" y="2" width="18" height="20" rx="5" fill="#FFEAD2"/>
+    <!-- หน้าจอสีเข้มตัดกัน -->
+    <rect x="5" y="4" width="14" height="5" rx="2.5" fill="#20262E"/>
+    <!-- เส้นไฟสถานะบนหน้าจอ -->
+    <rect x="8" y="6" width="5" height="1" rx="0.5" fill="#FFF"/>
+    <!-- ปุ่มกดสีพาสเทล -->
+    <rect x="5" y="11" width="3" height="3" rx="1.5" fill="#FF9494"/>
+    <rect x="10.5" y="11" width="3" height="3" rx="1.5" fill="#FFF"/>
+    <rect x="16" y="11" width="3" height="3" rx="1.5" fill="#FFF"/>
+    
+    <rect x="5" y="16" width="3" height="3" rx="1.5" fill="#FFF"/>
+    <rect x="10.5" y="16" width="8.5" height="3" rx="1.5" fill="#B3C5FF"/>
 </svg>
 """
 
-# ใช้การเชื่อมสตริงด้วย + แทน f-string เพื่อป้องกันระบบเอ๋อ
 st.markdown(
-    '<h1 style="display: flex; align-items: center; white-space: nowrap;">Pim-Tang ' + CALCULATOR_ICON + '</h1>', 
+    '<h1 style="display: flex; align-items: center; white-space: nowrap;">Pim-Tang ' + CALCULATOR_STYLE_1 + '</h1>', 
     unsafe_allow_html=True
 )
 
