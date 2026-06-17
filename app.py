@@ -30,16 +30,38 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# แทนที่ st.title("Pim-Tang 🇹🇭") ด้วยโค้ดชุดนี้:
-st.markdown(
-    """
-    <h1 style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-        Pim-Tang 
-        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ed.svg" style="width: 45px; height: auto; vertical-align: middle;">
-    </h1>
-    """, 
-    unsafe_allow_html=True
-)
+# แปลงรูปภาพธงชาติไทยเป็น Base64 เพื่อฝังลงใน HTML
+import base64
+import urllib.request
+
+# ดึงและแปลงรูปภาพธงชาติ (ทำเพียงครั้งเดียวตอนรันแอป)
+@st.cache_data
+def get_flag_base64():
+    url = "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f1e9-1f1ed.png"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            return base64.b64encode(response.read()).decode()
+    except Exception:
+        # หากดึงภาพไม่ได้ ให้ใช้ Fallback ลิงก์สำรอง
+        return ""
+
+flag_base64 = get_flag_base64()
+
+# แสดงผลหัวข้อ Pim-Tang พร้อมรูปธงชาติ
+if flag_base64:
+    st.markdown(
+        f"""
+        <h1 style="vertical-align: middle;">
+            Pim-Tang 
+            <img src="data:image/png;base64,{flag_base64}" style="width: 42px; margin-left: 8px; vertical-align: -5px;">
+        </h1>
+        """, 
+        unsafe_allow_html=True
+    )
+else:
+    # หากเกิดข้อผิดพลาดในการโหลดรูปจริงๆ ให้กลับไปใช้ข้อความปกติเพื่อไม่ให้แอปพัง
+    st.title("Pim-Tang 🇹🇭")
 
 YEAR = 2026
 
